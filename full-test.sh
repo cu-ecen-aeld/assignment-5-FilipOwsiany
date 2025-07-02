@@ -1,6 +1,8 @@
 #!/bin/bash
 # This script automates testing for assignment-autotest
 set -e
+export FORCE_UNSAFE_CONFIGURE=1
+
 
 cd "$(dirname "$0")"
 test_dir=$(pwd)
