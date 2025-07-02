@@ -14,6 +14,9 @@ exec > >(tee -i -a "$logfile") 2> >(tee -i -a "$logfile" >&2)
 echo "Running test with user $(whoami)"
 pwd
 
+apt-get update && apt-get install -y fakeroot
+
+
 set +e
 
 if [ -f conf/assignment.txt ]; then
