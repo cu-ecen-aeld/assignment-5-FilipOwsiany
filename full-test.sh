@@ -24,7 +24,7 @@ if [ -f conf/assignment.txt ]; then
 
     if [ -f ./assignment-autotest/test/${assignment}/assignment-test.sh ]; then
         echo "Executing assignment test script"
-        sudo ./assignment-autotest/test/${assignment}/assignment-test.sh "$test_dir"
+        ./assignment-autotest/test/${assignment}/assignment-test.sh "$test_dir"
         rc=$?
 
         if [ $rc -eq 0 ]; then
