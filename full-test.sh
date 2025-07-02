@@ -12,6 +12,7 @@ logfile=test.sh.log
 exec > >(tee -i -a "$logfile") 2> >(tee -i -a "$logfile" >&2)
 
 echo "Running test with user $(whoami)"
+pwd
 
 set +e
 
@@ -20,7 +21,7 @@ if [ -f conf/assignment.txt ]; then
 
     if [ -f ./assignment-autotest/test/${assignment}/assignment-test.sh ]; then
         echo "Executing assignment test script"
-        ./assignment-autotest/test/${assignment}/assignment-test.sh "$test_dir"
+        sudo ./assignment-autotest/test/${assignment}/assignment-test.sh "$test_dir"
         rc=$?
 
         if [ $rc -eq 0 ]; then
