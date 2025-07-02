@@ -2,6 +2,8 @@
 # This script automates testing for assignment-autotest
 set -e
 export FORCE_UNSAFE_CONFIGURE=1
+export SKIP_BUILD=1
+export DO_VALIDATE=1
 
 
 cd "$(dirname "$0")"
@@ -15,7 +17,6 @@ echo "Running test with user $(whoami)"
 pwd
 
 apt-get update && apt-get install -y fakeroot
-
 
 set +e
 
